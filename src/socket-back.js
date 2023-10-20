@@ -1,8 +1,20 @@
-import { findDocument, updateDocument } from "./documentsDb.js";
+import { getDocuments, addDocument, findDocument, updateDocument } from "./documentsDb.js";
 import io from "./server.js";
 
 io.on("connection", (socket) => {
-    console.log('Client Connected. ID:', socket.id);
+    socket.on("get_documents", async (returnDocuments) => {
+        const documents = await getDocuments();
+
+        returnDocuments(documents)
+    });
+
+    socket.on("add_document", async (name) => {
+        const result = await addDocument(name)
+
+        if (result.acknowledged) {
+            io.emit("add_document_interface", name)
+        }
+    });
 
     socket.on("select_document", async (docName, returnText) => {
         socket.join(docName);
