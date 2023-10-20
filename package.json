@@ -21,6 +21,7 @@
   "homepage": "https://github.com/luisafalcao/projeto02#readme",
   "dependencies": {
     "express": "^4.18.2",
+    "mongodb": "4.11",
     "socket.io": "^4.7.2"
   },
   "devDependencies": {
