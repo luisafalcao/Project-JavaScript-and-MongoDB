@@ -8,28 +8,31 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-  <title>Docs</title>
+  <title>MyDocs</title>
 </head>
 
-<body class="col-lg-6 mt-3 mx-auto">
+<body class="col-lg-6 mt-3 mx-auto bg-dark text-white" style="font-family: 'Open Sans', sans-serif;">
   <header>
-    <h1 class="text-center display-2 mb-4">Docs</h1>
+    <h1 class="text-center display-2 mb-4" style="text-transform: lowercase;">MyDocs</h1>
   </header>
 
   <main class="w-75 mx-auto">
-    <div id="documents-list" class="list-group mb-4">
+    <div id="documents-list" class="list-group mb-4 font-weight-bold">
 
     </div>
 
     <form id="add-document-form" class="row g-3">
       <div class="col-md-6">
-        <label class="visually-hidden" for="input-document">Nome do documento</label>
-        <input type="text" class="form-control" id="input-document" placeholder="Documento..." required>
+        <label class="visually-hidden" for="input-document">Novo Documento</label>
+        <input type="text" class="form-control" id="input-document" placeholder="Novo Documento" required>
       </div>
 
       <div class="col-md-6">
-        <button type="submit" class="btn btn-primary w-100">Adicionar documento</button>
+        <button type="submit" class="btn btn-warning w-100">Adicionar documento</button>
       </div>
     </form>
   </main>

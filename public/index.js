@@ -13,10 +13,15 @@ form.addEventListener('submit', (e) => {
 
 function insertDocumentLink(docName) {
     documentsList.innerHTML += `
-        <a href="document.html?nome=${docName}" class="list-group-item list-group-item-action">
+        <a href="document.html?nome=${docName}" class="list-group-item list-group-item-action" id="document-${docName}">
             ${docName}
         </a>
     `
 }
 
-export { insertDocumentLink }
+function removeDocumentLink(docName) {
+    const documento = document.getElementById(`document-${docName}`)
+    documentsList.removeChild(documento);
+}
+
+export { insertDocumentLink, removeDocumentLink }

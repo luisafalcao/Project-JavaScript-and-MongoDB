@@ -1,10 +1,11 @@
-import { emitTextEditor, selectDocument } from "./socket-front-document.js";
+import { emitTextEditor, selectDocument, emitDeleteDocument } from "./socket-front-document.js";
 
 const params = new URLSearchParams(window.location.search);
 const docName = params.get('nome');
 
 const textEditor = document.getElementById('text-editor');
 const docTitle = document.getElementById('document-title');
+const deleteDocBtn = document.getElementById('delete-document')
 
 docTitle.textContent = docName || "Documento sem título"
 
@@ -23,4 +24,15 @@ function refreshTextEditor(text) {
     textEditor.value = text;
 }
 
-export { refreshTextEditor }
+deleteDocBtn.addEventListener('click', () => {
+    emitDeleteDocument(docName)
+})
+
+function alertAndRedirect(name) {
+    if (name === docName) {
+        alert(`Documento ${name} excluído!`);
+        window.location.href = "/"
+    }
+}
+
+export { refreshTextEditor, alertAndRedirect }

@@ -35,4 +35,12 @@ function updateDocument(name, text) {
     return update
 }
 
-export { getDocuments, addDocument, findDocument, updateDocument }
+function deleteDocument(name) {
+    const result = documentsCollection.deleteOne({
+        name
+    })
+
+    return result
+}
+
+export { getDocuments, addDocument, findDocument, updateDocument, deleteDocument }
