@@ -1,1 +1,1 @@
-# Projeto Backend com Typescript e MongoDB
+# Projeto Backend com Javascript e MongoDB
